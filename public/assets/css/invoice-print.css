@@ -1,0 +1,18 @@
+#hiderow,
+.delete, .alert, .cabecera{
+  display: none;
+}
+
+p.pull-right, .btn{
+    display: none;
+}
+
+body{
+    font-size: small;
+    width:100%;
+    margin:0px;
+}
+
+.comment{
+	display: none;
+}

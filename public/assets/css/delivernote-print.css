@@ -1,0 +1,46 @@
+#hiderow,
+.delete, .alert{
+  display: none;
+}
+
+p.pull-right{
+    display: none;
+}
+
+#print-deliverynote{
+    display: none;
+}
+
+#header{
+    border: 1px solid #666;
+}
+
+/* GENERAL */
+
+a.btn{
+    display: none;
+}
+
+.hide_elem{
+    display: none;
+}
+
+body{
+    font-size: 2em !important;
+}
+
+table.print{
+    font-size: 0.6em;
+}
+
+h3.print{
+    font-size: 0.9em;
+}
+
+p.print{
+    font-size: 0.7em;
+}
+
+.comment{
+    display: block;
+}
