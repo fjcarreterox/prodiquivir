@@ -205,7 +205,7 @@ class Controller_Factura extends Controller_Template{
         }else {
             $data['factura'] = $factura;
             $data['lineas'] = Model_Linea::find('all',array('where'=>array('idfactura'=>$idfactura),'order_by'=>'orden'));
-            $this->template->title = "Sistema automático de facturación de ACEITUNAS CORIA S.L.";
+            $this->template->title = "Sistema automático de facturación de PRODIQUIVIR S.L.";
             $this->template->content = View::forge('factura/print', $data);
         }
     }

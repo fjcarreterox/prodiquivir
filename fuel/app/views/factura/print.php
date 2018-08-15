@@ -6,9 +6,9 @@ $ftemp=explode('-',date_conv($factura->fecha));
     <textarea id="header">RECIBO</textarea>
     <div id="identity">
         <div id="address">
-            <p>ACEITUNAS CORIA, S.L.</p>
-            <p class="smaller">N.I.F. B-91030692</p>
-            <p class="smallest">Avda. Andalucía, 189 - Teléfono 954 77 19 29<br/>
+            <p>PRODIQUIVIR, S.L.</p>
+            <p class="smaller">N.I.F. B-90390527</p>
+            <p class="smallest">C/ Tres de Abril, 9 - 1º - Teléfono 954 77 19 29<br/>
                 41100 CORIA DEL RIO (Sevilla)</p>
         </div>
         <div class="customer">

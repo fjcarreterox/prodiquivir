@@ -40,7 +40,7 @@
 			<div class="col-md-12">
 				<h1>¡Qué tal, <?php echo \Fuel\Core\Session::get('username');; ?>! <br/><br/><small>Guia básica de uso de esta aplicación.</small></h1>
 				<hr>
-                <p>Vamos a describir cómo usar esta aplicación web para la gestión de los datos que Aceitunas Coria S.L. maneja. Muy atento/a a las secciones, marcadas en <code>rojo</code> porque serán importantes.</p>
+                <p>Vamos a describir cómo usar esta aplicación web para la gestión de los datos que Prodiquivir S.L. maneja. Muy atento/a a las secciones, marcadas en <code>rojo</code> porque serán importantes.</p>
                 <h2>Descripción general</h2>
                 <p>Esta aplicación es una aplicación <code>web</code> por lo que es neceario un navegador web para poder interactuar con ella.</p>
                 <p>Se recomienda el uso de navegadores actuales (Internet Explorer, por favor, no), preferentemente Google Chrome, que
