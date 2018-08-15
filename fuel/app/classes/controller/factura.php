@@ -254,7 +254,7 @@ class Controller_Factura extends Controller_Template{
 			}
 		}
 		
-        $newyear=false;
+        $newyear=true;
         if(!$newyear) {
             $fmax= Model_Factura::max('id');
             $data['num_fact'] = Model_Factura::find($fmax)->get('num_factura');
