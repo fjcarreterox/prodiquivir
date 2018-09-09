@@ -65,7 +65,7 @@ if($idprov==""){
 <?php   if($show_select){ ?>
         <div class="form-group">
             <?php echo Form::label('Proveedor que hace la entrega', 'idprov', array('class'=>'control-label')); ?>
-            <?php echo Form::select('idprov', $idprov, $options_provs, array('class' => 'col-md-4 form-control', 'placeholder'=>'Proveedor')); ?>
+            <?php echo Form::select('idprov', Input::post('idprov', isset($entrega) ? $entrega->idprov : $idprov), $options_provs, array('class' => 'col-md-4 form-control', 'placeholder'=>'Proveedor')); ?>
         </div>
 <?php
         }else{
