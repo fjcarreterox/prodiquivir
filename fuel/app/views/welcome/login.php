@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Prodiquivir! S.L.</title>
+	<title>Prodiquivir S.L.U.</title>
 	<?php echo Asset::css('bootstrap.css'); ?>
     <?php echo Asset::css('styles.css'); ?>
 	<style>
@@ -17,7 +17,7 @@
 	</header>
 	<div class="container">
 		<div class="jumbotron">
-			<h1>Prodiquivir S.L.</h1>
+			<h1>Prodiquivir S.L.U.</h1>
 			<p>Identifícate para acceder al Área de gestión.</p>
             <?php echo render('welcome/_form_login'); ?>
 		</div>

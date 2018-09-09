@@ -6,7 +6,7 @@ $ftemp=explode('-',date_conv($factura->fecha));
     <textarea id="header">RECIBO</textarea>
     <div id="identity">
         <div id="address">
-            <p>PRODIQUIVIR, S.L.</p>
+            <p>PRODIQUIVIR, S.L.U.</p>
             <p class="smaller">N.I.F. B-90390527</p>
             <p class="smallest">C/ Tres de Abril, 9 - 1º - Teléfono 954 77 19 29<br/>
                 41100 CORIA DEL RIO (Sevilla)</p>

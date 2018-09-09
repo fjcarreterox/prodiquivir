@@ -7,7 +7,7 @@ $prov=Model_Proveedor::find($albaran->get('idproveedor'));
 		<textarea id="header">ALBARÁN</textarea>
 		<div id="identity">
             <div id="address">
-                <p>PRODIQUIVIR, S.L.</p>
+                <p>PRODIQUIVIR, S.L.U.</p>
                 <p class="smaller">N.I.F. B-90390527</p>
                 <p class="smallest">C/ Tres de Abril, 9 - 1º - Teléfono 954 77 19 29<br/>
                     41100 CORIA DEL RIO (Sevilla)</p>
@@ -104,7 +104,7 @@ $prov=Model_Proveedor::find($albaran->get('idproveedor'));
 		  <h5>Conforme,</h5><br/><br/>
 		</div>
 		<br/><br/>
-        <p class="smaller"><i>* Por el extravío de cada envase el proveedor arriba indicado deberá pagar a Prodiquivir S.L la cantidad de 75€, que le será descontada del total del cobro.</i></p>
+        <p class="smaller"><i>* Por el extravío de cada envase el proveedor arriba indicado deberá pagar a Prodiquivir S.L.U. la cantidad de 75€, que le será descontada del total del cobro.</i></p>
 	</div>
 <?php echo Html::anchor('javascript:window.print()', '<span class="glyphicon glyphicon-print"></span> Imprimir albarán', array('class' => 'btn btn-small btn-info','id'=>'print-deliverynote')); ?>
 <?php echo Html::anchor('entrega/create', '<span class="glyphicon glyphicon-repeat"></span> Registrar nueva entrega', array('class' => 'btn btn-small btn-success')); ?>

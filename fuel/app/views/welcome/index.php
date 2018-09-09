@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Prodiquivir S.L.</title>
+	<title>Prodiquivir S.L.U.</title>
 	<?php echo Asset::css('bootstrap.css'); ?>
     <?php echo Asset::css('styles.css'); ?>
 </head>
@@ -14,7 +14,7 @@
 	</header>
 	<div class="container">
 		<div class="jumbotron">
-			<h1>Prodiquivir S.L.</h1>
+			<h1>Prodiquivir S.L.U.</h1>
 			<br/>
 			<p>Área de gestión. ¡Qué tal, <b><?php echo \Fuel\Core\Session::get('username'); ?></b>!</p><br/>
             <ul class="list-unstyled">

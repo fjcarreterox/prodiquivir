@@ -5,7 +5,7 @@
 <div id="page-wrap">
     <textarea id="header">RECIBÍ</textarea>
     <div style="clear:both"></div>
-    <p class="recibi">RECIBÍ de <b>PRODIQUIVIR S.L.</b> el siguiente <strong>anticipo</strong> por CAMPAÑA <?php echo date('Y');?>:</p>
+    <p class="recibi">RECIBÍ de <b>PRODIQUIVIR S.L.U.</b> el siguiente <strong>anticipo</strong> por CAMPAÑA <?php echo date('Y');?>:</p>
     <div id="customer">
         <table id="anticipo">
             <tr>
