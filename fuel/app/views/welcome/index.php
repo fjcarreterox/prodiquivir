@@ -29,6 +29,7 @@
                 <ul>
                     <li><a href="entrega/create">Registrar nueva entrega</a></li>
                     <li><a href="puesto">Entrada diaria</a></li>
+                    <li><a href="proveedor/create">Alta de nuevo proveedor</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
