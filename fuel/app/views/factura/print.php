@@ -108,7 +108,7 @@ $ftemp=explode('-',date_conv($factura->fecha));
 	<div id="terms">
         <h5>Firma:</h5><br/>
         <p>MANIFIESTA: que se encuentra acogido al R.E.A.G.P</p>
-        <p>En Bollullos de la Mitación, a <?php echo $ftemp[0];?> de <?php echo getMes($ftemp[1]);?> de <?php echo $ftemp[2];?></p></br>
+        <p>En Coria del Río, a <?php echo $ftemp[0];?> de <?php echo getMes($ftemp[1]);?> de <?php echo $ftemp[2];?></p></br>
     </div>
 
     <?php echo Form::open(array("class"=>"form-horizontal")); ?>
