@@ -10,8 +10,7 @@
                 echo "<th>Proveedor</th>";
                 echo "<th>CIF/NIF</th>";
             }?>
-			<th>Base Imponible (&euro;)</th>
-			<th>IVA (&euro;)</th>
+			<th>Base (&euro;)</th>
 			<th>Retención (2%)</th>
 		</tr>
 	</thead>
@@ -22,8 +21,7 @@
 			echo "<td>".Model_Proveedor::find($f['prov'])->get('nombre')."</td>";
 			echo "<td>".Model_Proveedor::find($f['prov'])->get('nifcif')."</td>";
             }?>
-            <td><?php echo $f['base']; ?></td>
-            <td><?php echo $f['comp']; ?></td>
+            <td><?php echo $f['base']+$f['comp']; ?></td>
             <td><?php echo $f['retencion']; ?></td>
 		</tr>
 <?php endforeach; ?>
