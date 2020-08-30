@@ -165,11 +165,13 @@ class Controller_Albaran extends Controller_Template{
 		$this->template->title = "Editando datos del Albarán";
 		$this->template->content = View::forge('albaran/edit');
 	}
-	
+
 	public function action_edit_prov($idalb = null, $idprov){
 		is_null($idalb) and Response::redirect('albaran/list');
 
-		if ( ! $albs = Model_Albaran::find('all',array('where'=>array("idalbaran"=>$idalb)))){
+		$albaranes = Model_Albaran::find('all',array('where'=>array('idalbaran'=>$idalb,array('fecha','LIKE','2020%'))));
+
+		if (empty($albaranes)){
 			Session::set_flash('error', 'No existe en el sistema el albarán núm. '.$idalb);
 			Response::redirect('albaran/list');
 		}
@@ -177,22 +179,21 @@ class Controller_Albaran extends Controller_Template{
 		$val = Model_Albaran::validate('edit');
 
 		if ($val->run()){
-            foreach($albs as $alb){
-                $alb->idproveedor = Input::post('provider');
-                if ($alb->save()){
-                    Session::set_flash('success', 'Albarán núm. ' . $alb->idalbaran .' actualizado.');
-                }
-                else{
-                    Session::set_flash('error', 'No se ha podido actualizar el albarán núm. ' . $alb->idalbaran);
-                }
-            }
-            Response::redirect('albaran/view/'.$alb->idalbaran);
+			foreach($albaranes as $alb) {
+				$alb->idproveedor = Input::post('provider');
+				if ($alb->save()) {
+					Session::set_flash('success', 'Albarán núm. ' . $alb->idalbaran . ' actualizado.');
+				} else {
+					Session::set_flash('error', 'No se ha podido actualizar el albarán núm. ' . $alb->id);
+				}
+			}
+			Response::redirect('albaran/view/'.$idalb);
 		}
-        $data["proveedores"] = Model_Proveedor::find('all',array('order_by'=>'nombre'));
-        $data["current"] = $idprov;
-        $data["idalb"] = $idalb;
+		$data["proveedores"] = Model_Proveedor::find('all',array('order_by'=>'nombre'));
+		$data["current"] = $idprov;
+		$data["idalb"] = $idalb;
 
-		$this->template->title = "Editando datos del Albarán";
+		$this->template->title = "Cambiar proveedor para el Albarán";
 		$this->template->content = View::forge('albaran/edit_prov',$data);
 	}
 
