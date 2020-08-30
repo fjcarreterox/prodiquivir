@@ -105,6 +105,8 @@ class Controller_Entrega extends Controller_Template
             $data['anticipos'] = Model_Anticipo::find('all',array('where'=>array(array('recogido'=>'1'),array('idprov'=> $idprov),array('fecha', 'LIKE', $year.'%')),'order_by'=>array('fecha'=>'desc')));
             $data['entregas'] = $entregas;
             $data['nombre_prov'] = Model_Proveedor::find($idprov)->get('nombre');
+            $data['tlfno'] = Model_Proveedor::find($idprov)->get('telefono');
+            $data['idc'] = $idprov;
         }
 
         $this->template->title = "Ficha final de proveedor";

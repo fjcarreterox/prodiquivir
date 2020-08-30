@@ -4,7 +4,8 @@
     echo "<h3>Día: <span class='muted'>".date_conv($fecha)."</span></h3>";
 }
 else{*/
-    echo "<h2><span class='muted'>Ficha final</span> del proveedor <b>$nombre_prov.</b></h2>";
+    if(empty($tlfno)){$tlfno="No Espec.";}
+    echo "<h2><span class='muted'>Ficha final</span> del proveedor <b>$nombre_prov.</b> ($tlfno)</h2>";
 //}
 ?>
 <br/>
