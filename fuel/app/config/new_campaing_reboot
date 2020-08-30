@@ -1,0 +1,41 @@
+Guide to update the app very new campaing in the MySQL queries and menu options.
+Hopefully the data adequation can be automated with an script.
+
+1) Delete the following tables: (only when the app is new, with no historical data)
+    * albarans
+    * anticipos
+    * entregas
+    * facturas
+    * lineas
+
+2) Edit the following files in order to modify the queries to the database (look for last year occurences):
+
+i.e. https://github.com/fjcarreterox/gestion-entregas-AC/commit/6b7ed5b3bb7883b7bcf1c33750edee2fca42f710
+
+CONTROLLERS
+    * fuel/app/classes/controller/albaran.php -> '2018%' (3 places)
+    * fuel/app/classes/controller/anticipo.php -> '2017-12-31'
+    * fuel/app/classes/controller/entrega.php ->
+        * "Informe global de la campaña 2018";
+        * "durante la campaña 2018."
+        * '2017-12-31'
+        * array('fecha','LIKE','2017%') (2 occurrences)
+    * fuel/app/classes/controller/factura.php -> '2017-12-31'
+    * fuel/app/classes/controller/proveedor.php -> '2018%' and '2017%'
+
+
+VIEWS
+    * fuel/app/views/anticipo/calculo.php -> array('fecha','LIKE','2018%') (2 queries)
+    * fuel/app/views/entrega/historico.php -> <li><a href="../entrega/historico/2017">Campaña 2017</a></li>
+    * fuel/app/views/anticipo/sel_year.php -> <li><a href="../list_prov/<?php echo $idprov;?>/2018">Campaña 2018</a></li>
+    * fuel/app/views/entrega/sel_year.php -> <li><strong><a href="../list_prov/<?php echo $idprov;?>/2018">Campaña 2018</a></strong></li>
+    * fuel/app/views/factura/sel_year.php -> <li><strong><a href="../list_prov/<?php echo $idprov;?>/2018">Campaña 2018</a></strong></li>
+
+HELPERS
+    * fuel/core/helpers.php -> getTamMedio($idp,$v) -> update current year.
+
+3) Commit the changes to the repository
+
+4) Upload to PRE and verify
+
+5) Upload to PROD (acoria y prodi) and verify

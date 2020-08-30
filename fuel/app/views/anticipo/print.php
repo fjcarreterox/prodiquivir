@@ -35,4 +35,5 @@
     </div>
 </div>
 <?php echo Html::anchor('javascript:window.print()', '<span class="glyphicon glyphicon-print"></span> Imprimir recibí', array('class' => 'btn btn-small btn-info','id'=>'print-deliverynote')); ?>
-<?php echo Html::anchor('anticipo', '<span class="glyphicon glyphicon-plus"></span> Calcular nuevo anticipo', array('class' => 'btn btn-small btn-success')); ?> 
+<?php echo Html::anchor('anticipo', '<span class="glyphicon glyphicon-plus"></span> Calcular nuevo anticipo', array('class' => 'btn btn-small btn-success')); ?>
+<?php echo Html::anchor('/', '<span class="glyphicon glyphicon-backward"></span> Menú principal', array('class' => 'btn btn-danger','title'=>'Volver al menu')); ?>
