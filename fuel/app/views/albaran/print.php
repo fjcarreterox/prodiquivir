@@ -49,6 +49,7 @@ $prov=Model_Proveedor::find($albaran->get('idproveedor'));
 <?php
     $total_manz=0;
     $total_gordal=0;
+    $total_gordalmorada=0;
     $total_molino=0;
 	$comments="";
     foreach($entregas as $identrega){
@@ -62,6 +63,7 @@ $prov=Model_Proveedor::find($albaran->get('idproveedor'));
                   if($e->get('variedad')==1){$total_manz+=$e->get('total');}
                   elseif($e->get('variedad')==2){$total_gordal+=$e->get('total');}
                   elseif($e->get('variedad')==3){$total_molino+=$e->get('total');}
+                  elseif($e->get('variedad')==4){$total_gordalmorada+=$e->get('total');}
 
                   ?></td>
 		      <td class="comentario"><?php echo get_percents($e);?></td>
@@ -85,6 +87,11 @@ $prov=Model_Proveedor::find($albaran->get('idproveedor'));
                 <td colspan="2" class="blank"> </td>
                 <td colspan="1" class="total-line">Total Molino</td>
                 <td class="total-value"><div id="total"><?php echo $total_molino;?> Kgrs.</div></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="blank"> </td>
+                <td colspan="1" class="total-line">Total Gordal Morada</td>
+                <td class="total-value"><div id="total"><?php echo $total_gordalmorada;?> Kgrs.</div></td>
             </tr>
             <!--<tr>
                 <td colspan="2" class="blank"> </td>
