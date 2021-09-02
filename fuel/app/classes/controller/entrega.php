@@ -37,7 +37,7 @@ class Controller_Entrega extends Controller_Template
          $data['total'] = $total_kilos;
          $data['var'] = $total_var;
  
-         $this->template->title = "Informe global de la campaña 2020";
+         $this->template->title = "Informe global de la campaña 2021";
          $this->template->content = View::forge('entrega/report',$data);
      }
  
@@ -116,8 +116,8 @@ class Controller_Entrega extends Controller_Template
     public function action_list($idpuesto = null){
 
         if(is_null($idpuesto)) {
-			$data['titulo'] = "durante la campaña 2020.";
-            $data['entregas'] = Model_Entrega::find('all', array('where'=>array(array('fecha','>','2019-12-31')),'order_by' => array('Fecha' => 'desc'),'order_by' => array('id' => 'desc')));
+			$data['titulo'] = "durante la campaña 2021.";
+            $data['entregas'] = Model_Entrega::find('all', array('where'=>array(array('fecha','>','2021-12-31')),'order_by' => array('Fecha' => 'desc'),'order_by' => array('id' => 'desc')));
             $this->template->title = "Listado de todas las entregas realizadas";
         }
         else{
@@ -162,7 +162,7 @@ class Controller_Entrega extends Controller_Template
 			$val = Model_Entrega::validate('create');
 
 			if ($val->run()){
-                $albs=Model_Albaran::find('all',array('where'=>array(array('fecha','LIKE','2020%')),'order_by'=>array('id'=>'desc','idalbaran'=>'desc')));
+                $albs=Model_Albaran::find('all',array('where'=>array(array('fecha','LIKE','2021%')),'order_by'=>array('id'=>'desc','idalbaran'=>'desc')));
 				$last_albaran = array_shift($albs);
 
                 if(!$last_albaran) {
@@ -172,7 +172,7 @@ class Controller_Entrega extends Controller_Template
                 else {
 					$last_albaran = Model_Albaran::find('last', array('order_by' => array('id'=>'desc')));
                     $last_albaran_id = $last_albaran->get('id');
-                    $last_albaran_num = Model_Albaran::query()->where('fecha','LIKE','2020%')->max('idalbaran');
+                    $last_albaran_num = Model_Albaran::query()->where('fecha','LIKE','2021%')->max('idalbaran');
                 }
 
 				$entrega = Model_Entrega::forge(array(

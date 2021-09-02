@@ -134,13 +134,13 @@ class Controller_Albaran extends Controller_Template{
                 $res1 = DB::update('albarans')
                     ->value("comentario", Input::post('comentario'))
                     ->where('idalbaran', '=',Input::post('idalbaran') )
-					->and_where('fecha','LIKE', '2020%')
+					->and_where('fecha','LIKE', '2021%')
                     ->execute();
 
 				$res2 = DB::update('albarans')
 					->value("fecha", Input::post('fecha'))
 					->where('idalbaran', '=',Input::post('idalbaran') )
-					->and_where('fecha','LIKE', '2020%')
+					->and_where('fecha','LIKE', '2021%')
 					->execute();
 
 				Session::set_flash('success', 'Albarán núm. ' . $albaran->idalbaran .' actualizado.');
@@ -201,7 +201,7 @@ class Controller_Albaran extends Controller_Template{
 		is_null($id) and Response::redirect('albaran/list');
 
 		if ($albaran = Model_Albaran::find($id)){
-            $related = Model_Albaran::find('all',array('where'=>array('idalbaran'=>$albaran->idalbaran,array('fecha','LIKE','2020%'))));
+            $related = Model_Albaran::find('all',array('where'=>array('idalbaran'=>$albaran->idalbaran,array('fecha','LIKE','2021%'))));
             foreach($related as $a) {
                 $entrega = Model_Entrega::find('first', array('where' => array('albaran' => $a->id)));
                 //echo "Borramos la entrega ".$entrega->id;

@@ -17,7 +17,7 @@ class Controller_Anticipo extends Controller_Template
 
     public function action_list()
     {
-        $data['anticipos'] = Model_Anticipo::find('all', array('where'=>array(array('fecha','>','2019-12-31')),'order_by' => array('fecha' => 'desc')));
+        $data['anticipos'] = Model_Anticipo::find('all', array('where'=>array(array('fecha','>','2020-12-31')),'order_by' => array('fecha' => 'desc')));
         $this->template->title = "Anticipos: todos los registrados";
         $this->template->content = View::forge('anticipo/list', $data);
     }
