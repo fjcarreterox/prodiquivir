@@ -169,7 +169,7 @@ class Controller_Albaran extends Controller_Template{
 	public function action_edit_prov($idalb = null, $idprov){
 		is_null($idalb) and Response::redirect('albaran/list');
 
-		$albaranes = Model_Albaran::find('all',array('where'=>array('idalbaran'=>$idalb,array('fecha','LIKE','2020%'))));
+		$albaranes = Model_Albaran::find('all',array('where'=>array('idalbaran'=>$idalb,array('fecha','LIKE','2021%'))));
 
 		if (empty($albaranes)){
 			Session::set_flash('error', 'No existe en el sistema el albarán núm. '.$idalb);
