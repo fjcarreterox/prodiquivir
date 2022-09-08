@@ -29,8 +29,7 @@ else{
 	<div class="container">
 		<div class="col-md-12 cabecera">
 			<!--<h1><?php /*echo $title;*/ ?></h1>-->
-            <a alt="Ir al menú principal" href="http://prodi.aceitunascoria.es/fuel/public/" class="no-decoration"><?php echo Asset::img('aceitunas.jpg',array("class"=>"logo","alt"=>"Ir al menú principal")); ?>
-            <h1>Prodiquivir S.L.</h1></a>
+            <a alt="Ir al menú principal" href="http://localhost/public/" class="no-decoration"><?php echo Asset::img('aceitunas.jpg',array("class"=>"logo","alt"=>"Ir al menú principal")); ?>
             <h1>Prodiquivir S.L.U.</h1></a>
 			<hr>
 <?php if (Session::get_flash('success')): ?>

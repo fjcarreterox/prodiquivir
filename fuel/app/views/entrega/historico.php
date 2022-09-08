@@ -10,7 +10,7 @@
         <li><a href="../entrega/historico/2018">Campaña 2018</a></li>
         <li><a href="../entrega/historico/2019">Campaña 2019</a></li>
         <li><a href="../entrega/historico/2020">Campaña 2020</a></li>
-        <li><a href="../entrega/historico/2020">Campaña 2021</a></li>
+        <li><a href="../entrega/historico/2021">Campaña 2021</a></li>
     </ul>
 <?php
 }
