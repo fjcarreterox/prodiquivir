@@ -21,12 +21,12 @@ else {
     <br/>
     <p>A continuación puedes consultar todos los datos relevantes de la pasada campaña de <?php echo $year;?>.</p>
     <ul>
-        <li><a href="../entrega/year/<?php echo $year;?>">Entregas</a></li>
-        <li><a href="../albaran/year/<?php echo $year;?>">Albaranes</a></li>
-        <li><a href="../factura/year/<?php echo $year;?>">Facturas</a></li>
-        <li><a href="../anticipo/year/<?php echo $year;?>">Anticipos</a></li>
-        <li><a href="../factura/gestoria/<?php echo $year;?>">Resumen para gestoria</a></li>
-        <li><a href="../factura/report/<?php echo $year;?>">Resumen IVA y retenciones</a></li>
+        <li><a href="../../entrega/year/<?php echo $year;?>">Entregas</a></li>
+        <li><a href="../../albaran/year/<?php echo $year;?>">Albaranes</a></li>
+        <li><a href="../../factura/year/<?php echo $year;?>">Facturas</a></li>
+        <li><a href="../../anticipo/year/<?php echo $year;?>">Anticipos</a></li>
+        <li><a href="../../factura/gestoria/<?php echo $year;?>">Resumen para gestoria</a></li>
+        <li><a href="../../factura/report/<?php echo $year;?>">Resumen IVA y retenciones</a></li>
     </ul>
 
     <?php
