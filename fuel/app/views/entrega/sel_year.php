@@ -8,5 +8,6 @@
     <li><a href="../list_prov/<?php echo $idprov;?>/2019">Campaña 2019</a></li>
     <li><a href="../list_prov/<?php echo $idprov;?>/2020">Campaña 2020</a></li>
     <li><a href="../list_prov/<?php echo $idprov;?>/2021">Campaña 2021</a></li>
-    <li><strong><a href="../list_prov/<?php echo $idprov;?>/2022">Campaña 2022</a></strong></li>
+    <li><a href="../list_prov/<?php echo $idprov;?>/2022">Campaña 2022</a></li>
+    <li><strong><a href="../list_prov/<?php echo $idprov;?>/2023">Campaña 2023</a></strong></li>
 </ul>

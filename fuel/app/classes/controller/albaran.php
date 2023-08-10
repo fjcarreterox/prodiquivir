@@ -134,13 +134,13 @@ class Controller_Albaran extends Controller_Template{
                 $res1 = DB::update('albarans')
                     ->value("comentario", Input::post('comentario'))
                     ->where('idalbaran', '=',Input::post('idalbaran') )
-					->and_where('fecha','LIKE', '2022%')
+					->and_where('fecha','LIKE', '2023%')
                     ->execute();
 
 				$res2 = DB::update('albarans')
 					->value("fecha", Input::post('fecha'))
 					->where('idalbaran', '=',Input::post('idalbaran') )
-					->and_where('fecha','LIKE', '2022%')
+					->and_where('fecha','LIKE', '2023%')
 					->execute();
 
 				Session::set_flash('success', 'Albarán núm. ' . $albaran->idalbaran .' actualizado.');
@@ -169,7 +169,7 @@ class Controller_Albaran extends Controller_Template{
 	public function action_edit_prov($idalb = null, $idprov){
 		is_null($idalb) and Response::redirect('albaran/list');
 
-		$albaranes = Model_Albaran::find('all',array('where'=>array('idalbaran'=>$idalb,array('fecha','LIKE','2022%'))));
+		$albaranes = Model_Albaran::find('all',array('where'=>array('idalbaran'=>$idalb,array('fecha','LIKE','2023%'))));
 
 		if (empty($albaranes)){
 			Session::set_flash('error', 'No existe en el sistema el albarán núm. '.$idalb);
@@ -201,7 +201,7 @@ class Controller_Albaran extends Controller_Template{
 		is_null($id) and Response::redirect('albaran/list');
 
 		if ($albaran = Model_Albaran::find($id)){
-            $related = Model_Albaran::find('all',array('where'=>array('idalbaran'=>$albaran->idalbaran,array('fecha','LIKE','2022%'))));
+            $related = Model_Albaran::find('all',array('where'=>array('idalbaran'=>$albaran->idalbaran,array('fecha','LIKE','2023%'))));
             foreach($related as $a) {
                 $entrega = Model_Entrega::find('first', array('where' => array('albaran' => $a->id)));
                 //echo "Borramos la entrega ".$entrega->id;
