@@ -67,3 +67,5 @@ public/assets/docs/*
 *.phar
 composer.phar
 fuel/app/config/development/db.php
+fuel/core/CONTRIBUTING.md
+fuel/core/phpunit.xml
