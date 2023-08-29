@@ -45,7 +45,14 @@ public/assets/docs/*
 
 # any of the fuel packages installed by default
 /docs/
-/fuel/core/
+/fuel/core/classes
+/fuel/core/config
+/fuel/core/lang
+/fuel/core/tasks
+/fuel/core/tests
+/fuel/core/vendor
+/fuel/core/views
+/fuel/core/b*.php
 /fuel/packages/auth/
 /fuel/packages/email/
 /fuel/packages/oil/
