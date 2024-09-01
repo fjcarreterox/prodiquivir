@@ -71,7 +71,7 @@ function get_percents($entrega){
  * Get the average size of the delivered in the current campaign by delivery post
  * */
 function getTamMedio($idp,$variedad){
-    $total = DB::select('id','tam','total','variedad')->from('entregas')->where(array(array('idpuesto','=', $idp),array('tam','<>',0),array('fecha','>','2023-01-01')))->execute();
+    $total = DB::select('id','tam','total','variedad')->from('entregas')->where(array(array('idpuesto','=', $idp),array('tam','<>',0),array('fecha','>','2024-01-01')))->execute();
     $tam_medio=array();
     $total_kg_medio=array();
     foreach($total as $t){
