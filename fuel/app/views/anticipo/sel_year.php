@@ -10,4 +10,5 @@
     <li><a href="../list_prov/<?php echo $idprov;?>/2021">Campaña 2021</a></li>
     <li><a href="../list_prov/<?php echo $idprov;?>/2022">Campaña 2022</a></li>
     <li><a href="../list_prov/<?php echo $idprov;?>/2023">Campaña 2023</a></li>
+    <li><a href="../list_prov/<?php echo $idprov;?>/2024">Campaña 2024</a></li>
 </ul>

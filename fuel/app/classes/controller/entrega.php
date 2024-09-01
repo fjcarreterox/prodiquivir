@@ -37,7 +37,7 @@ class Controller_Entrega extends Controller_Template
         $data['total'] = $total_kilos;
         $data['var'] = $total_var;
 
-        $this->template->title = "Informe global de la campaña 2023";
+        $this->template->title = "Informe global de la campaña 2024";
         $this->template->content = View::forge('entrega/report',$data);
     }
 
@@ -116,8 +116,8 @@ class Controller_Entrega extends Controller_Template
     public function action_list($idpuesto = null){
 
         if(is_null($idpuesto)) {
-            $data['titulo'] = "durante la campaña 2023.";
-            $data['entregas'] = Model_Entrega::find('all', array('where'=>array(array('fecha','>','2022-12-31')),'order_by' => array('Fecha' => 'desc'),'order_by' => array('id' => 'desc')));
+            $data['titulo'] = "durante la campaña 2024.";
+            $data['entregas'] = Model_Entrega::find('all', array('where'=>array(array('fecha','>','2023-12-31')),'order_by' => array('Fecha' => 'desc'),'order_by' => array('id' => 'desc')));
             $this->template->title = "Listado de todas las entregas realizadas";
         }
         else{
@@ -162,13 +162,13 @@ class Controller_Entrega extends Controller_Template
             $val = Model_Entrega::validate('create');
 
             if ($val->run()){
-                $albs=Model_Albaran::find('all',array('where'=>array(array('fecha','LIKE','2023%')),'order_by'=>array('id'=>'desc','idalbaran'=>'desc')));
+                $albs=Model_Albaran::find('all',array('where'=>array(array('fecha','LIKE','2024%')),'order_by'=>array('id'=>'desc','idalbaran'=>'desc')));
 
                 if(count($albs)==0) {
                     $last_albaran_num = 0;
                 }
                 else {
-                    $last_albaran_num = Model_Albaran::query()->where('fecha','LIKE','2023%')->max('idalbaran');
+                    $last_albaran_num = Model_Albaran::query()->where('fecha','LIKE','2024%')->max('idalbaran');
                 }
                 $last_albaran_all = Model_Albaran::find('last', array('order_by' => array('id'=>'desc')));
                 $last_albaran_id = $last_albaran_all->get('id');
@@ -194,7 +194,7 @@ class Controller_Entrega extends Controller_Template
 
                 if ($entrega and $entrega->save()){
                     $current_albaran_num=$last_albaran_num+1;
-                    if(\Fuel\Core\Session::get('num_alb')){
+                    if(\Fuel\Core\Session::get('num_alb') and (\Fuel\Core\Session::get('idprov')==Input::post('idprov'))){
                         $current_albaran_num=\Fuel\Core\Session::get('num_alb');
                     }
 
