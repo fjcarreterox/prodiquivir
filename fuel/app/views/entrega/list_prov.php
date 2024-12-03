@@ -34,7 +34,7 @@ $total_kg_tam = array();
 $total_tam = array();
 $rep_m = array("O"=>0,"A"=>0,"B"=>0,"C"=>0,"D"=>0,"E"=>0,"F"=>0,"G"=>0/*,"H"=>0,"I"=>0,"J"=>0*/);
 $rep_g = array("O"=>0,"A"=>0,"B"=>0,"C"=>0,"D"=>0,"E"=>0);
-$rango_molino = array("R1"=>0,"R2"=>0,"R3"=>0,"R4"=>0,"R5"=>0,"R6"=>0,"R7"=>0);
+$rango_molino = array("R1"=>0,"R2"=>0,"R3"=>0,"R4"=>0,"R5"=>0);
 
 foreach ($entregas as $item):?>
     <tr>
@@ -71,10 +71,10 @@ foreach ($entregas as $item):?>
             }
             else if($item->variedad==3){
                 if(($item->fecha >= "2024-01-01") && ($item->fecha <= "2024-10-13")) $rango_molino["R1"] += $item->total;
-                if(($item->fecha >= "2024-10-14") && ($item->fecha <= "2024-11-03")) $rango_molino["R4"] += $item->total;
-                if(($item->fecha >= "2024-11-04") && ($item->fecha <= "2024-11-10")) $rango_molino["R5"] += $item->total;
-                if(($item->fecha >= "2024-11-11") && ($item->fecha <= "2024-11-17")) $rango_molino["R6"] += $item->total;
-                if(($item->fecha >= "2024-11-18") && ($item->fecha <= "2024-11-24")) $rango_molino["R7"] += $item->total;
+                if(($item->fecha >= "2024-10-14") && ($item->fecha <= "2024-11-03")) $rango_molino["R2"] += $item->total;
+                if(($item->fecha >= "2024-11-04") && ($item->fecha <= "2024-11-10")) $rango_molino["R3"] += $item->total;
+                if(($item->fecha >= "2024-11-11") && ($item->fecha <= "2024-11-17")) $rango_molino["R4"] += $item->total;
+                if(($item->fecha >= "2024-11-18") && ($item->fecha <= "2024-11-24")) $rango_molino["R5"] += $item->total;
             }
                 ?></td>
 			<td><strong><?php echo $item->total;

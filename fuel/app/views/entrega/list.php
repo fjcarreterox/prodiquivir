@@ -44,7 +44,7 @@ $num_entregas = array();
 $total_kg_tam = array();
 $rep_m = array("O"=>0,"A"=>0,"B"=>0,"C"=>0,"D"=>0,"E"=>0,"F"=>0,"G"=>0);
 $rep_g = array("O"=>0,"A"=>0,"B"=>0,"C"=>0,"D"=>0,"E"=>0);
-$rango_molino = array("R1"=>0,"R2"=>0,"R3"=>0,"R4"=>0,"R5"=>0,"R6"=>0,"R7"=>0);
+$rango_molino = array("R1"=>0,"R2"=>0,"R3"=>0,"R4"=>0,"R5"=>0);
 foreach ($entregas as $item):
 if(Model_Albaran::find('first', array('where' => array('id' => $item->albaran)))){
 	$alb = Model_Albaran::find('first', array('where' => array('id' => $item->albaran)));
