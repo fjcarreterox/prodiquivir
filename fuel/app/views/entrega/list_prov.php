@@ -32,9 +32,9 @@ else{*/
 $total_variedades = array();
 $total_kg_tam = array();
 $total_tam = array();
-$rep_m = array("O"=>0,"A"=>0,"B"=>0,"C"=>0,"D"=>0/*,"E"=>0,"F"=>0,"G"=>0,"H"=>0,"I"=>0,"J"=>0*/);
-$rep_g = array("O"=>0,"A"=>0,"B"=>0,"C"=>0);
-$rango_molino = array("R1"=>0,"R2"=>0,"R3"=>0/*,"R4"=>0*/);
+$rep_m = array("O"=>0,"A"=>0,"B"=>0,"C"=>0,"D"=>0,"E"=>0,"F"=>0,"G"=>0/*,"H"=>0,"I"=>0,"J"=>0*/);
+$rep_g = array("O"=>0,"A"=>0,"B"=>0,"C"=>0,"D"=>0,"E"=>0);
+$rango_molino = array("R1"=>0,"R2"=>0,"R3"=>0,"R4"=>0,"R5"=>0,"R6"=>0,"R7"=>0);
 
 foreach ($entregas as $item):?>
     <tr>
@@ -52,23 +52,29 @@ foreach ($entregas as $item):?>
             }
 
             if($item->variedad==1){
-                    if($item->tam == 0) $rep_m["O"] += $item->total;
-                    if(($item->tam > 0) && ($item->tam <= 240)) $rep_m["A"] += $item->total;
-                    if(($item->tam > 240) && ($item->tam <= 260)) $rep_m["B"] += $item->total;
-                    if(($item->tam > 260) && ($item->tam <= 300)) $rep_m["C"] += $item->total;
-                    else if($item->tam > 300) $rep_m["D"] += $item->total;
+                if($item->tam == 0) $rep_m["O"] += $item->total;
+                if(($item->tam > 0) && ($item->tam <= 220)) $rep_m["A"] += $item->total;
+                if(($item->tam > 220) && ($item->tam <= 240)) $rep_m["B"] += $item->total;
+                if(($item->tam > 240) && ($item->tam <= 260)) $rep_m["C"] += $item->total;
+                if(($item->tam > 260) && ($item->tam <= 280)) $rep_m["D"] += $item->total;
+                if(($item->tam > 280) && ($item->tam <= 300)) $rep_m["E"] += $item->total;
+                if(($item->tam > 300) && ($item->tam <= 320)) $rep_m["F"] += $item->total;
+                else if($item->tam > 320) $rep_m["G"] += $item->total;
             }
             else if($item->variedad==2){
-                    if($item->tam == 0) $rep_g["O"] += $item->total;
-                    if(($item->tam > 0) && ($item->tam <= 120)) $rep_g["A"] += $item->total;
-                    if(($item->tam > 120) && ($item->tam <= 130)) $rep_g["B"] += $item->total;
-                    else if($item->tam > 130) $rep_g["C"] += $item->total;
+                if($item->tam == 0) $rep_g["O"] += $item->total;
+                if(($item->tam > 0) && ($item->tam <= 59)) $rep_g["A"] += $item->total;
+                if(($item->tam > 59) && ($item->tam <= 90)) $rep_g["B"] += $item->total;
+                if(($item->tam > 90) && ($item->tam <= 110)) $rep_g["C"] += $item->total;
+                if(($item->tam > 110) && ($item->tam <= 130)) $rep_g["D"] += $item->total;
+                else if($item->tam > 130) $rep_g["E"] += $item->total;
             }
             else if($item->variedad==3){
-                if(($item->fecha >= "2022-01-01") && ($item->fecha <= "2022-10-09")) $rango_molino["R1"] += $item->total;
-                if(($item->fecha >= "2022-10-10") && ($item->fecha <= "2022-10-30")) $rango_molino["R2"] += $item->total;
-                if(($item->fecha >= "2022-10-31") && ($item->fecha <= "2022-12-31")) $rango_molino["R3"] += $item->total;
-                //if(($item->fecha >= "2022-11-13") && ($item->fecha <= "2022-12-31")) $rango_molino["R4"] += $item->total;
+                if(($item->fecha >= "2024-01-01") && ($item->fecha <= "2024-10-13")) $rango_molino["R1"] += $item->total;
+                if(($item->fecha >= "2024-10-14") && ($item->fecha <= "2024-11-03")) $rango_molino["R4"] += $item->total;
+                if(($item->fecha >= "2024-11-04") && ($item->fecha <= "2024-11-10")) $rango_molino["R5"] += $item->total;
+                if(($item->fecha >= "2024-11-11") && ($item->fecha <= "2024-11-17")) $rango_molino["R6"] += $item->total;
+                if(($item->fecha >= "2024-11-18") && ($item->fecha <= "2024-11-24")) $rango_molino["R7"] += $item->total;
             }
                 ?></td>
 			<td><strong><?php echo $item->total;
@@ -100,10 +106,13 @@ foreach ($entregas as $item):?>
     <h4><b>Tipo Manzanilla</b></h4>
     <tr>
         <th>0</th>
-        <th>< 240</th>
+        <th>< 220</th>
+        <th>221-240</th>
         <th>241-260</th>
-        <th>261-300</th>
-        <th>300-N</th>
+        <th>261-280</th>
+        <th>281-300</th>
+        <th>301-320</th>
+        <th>321-N</th>
     </tr>
     </thead>
     <tbody>
@@ -123,8 +132,10 @@ endforeach;
         <h4><b>Tipo Gordal</b></h4>
         <tr>
             <th>0</th>
-            <th>< 120</th>
-            <th>121 - 130</th>
+            <th>< 60</th>
+            <th>60 - 90</th>
+            <th>91 - 110</th>
+            <th>111 - 130</th>
             <th>131 - N</th>
         </tr>
         </thead>
@@ -144,9 +155,11 @@ endforeach;
     <thead>
     <h4><b>Tipo Molino</b></h4>
     <tr>
-        <th>Inicio campaña - 9/10</th>
-        <th>10/10 - 30/10</th>
-        <th>31/10 - 31/12</th>
+        <th>Inicio campaña - 13/10</th>
+        <th>14/10 - 3/11</th>
+        <th>4/11 - 10/11</th>
+        <th>11/11 - 17/11</th>
+        <th>18/11 - 24/11</th>
     </tr>
     </thead>
     <tbody>
