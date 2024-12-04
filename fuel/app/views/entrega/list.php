@@ -43,7 +43,7 @@ $tam_total = array();
 $num_entregas = array();
 $total_kg_tam = array();
 $rep_m = array("O"=>0,"A"=>0,"B"=>0,"C"=>0,"D"=>0,"E"=>0,"F"=>0,"G"=>0);
-$rep_g = array("O"=>0,"A"=>0,"B"=>0,"C"=>0,"D"=>0,"E"=>0);
+$rep_g = array("O"=>0,"A"=>0,"B"=>0/*,"C"=>0,"D"=>0,"E"=>0*/);
 $rango_molino = array("R1"=>0,"R2"=>0,"R3"=>0,"R4"=>0,"R5"=>0);
 foreach ($entregas as $item):
 if(Model_Albaran::find('first', array('where' => array('id' => $item->albaran)))){
@@ -67,11 +67,11 @@ else{
     }
     else if($item->variedad==2){
         if($item->tam == 0) $rep_g["O"] += $item->total;
-        if(($item->tam > 0) && ($item->tam <= 59)) $rep_g["A"] += $item->total;
-        if(($item->tam > 59) && ($item->tam <= 90)) $rep_g["B"] += $item->total;
+        if(($item->tam > 0) && ($item->tam <= 100)) $rep_g["A"] += $item->total;
+        /*if(($item->tam > 59) && ($item->tam <= 90)) $rep_g["B"] += $item->total;
         if(($item->tam > 90) && ($item->tam <= 110)) $rep_g["C"] += $item->total;
-        if(($item->tam > 110) && ($item->tam <= 130)) $rep_g["D"] += $item->total;
-        else if($item->tam > 130) $rep_g["E"] += $item->total;
+        if(($item->tam > 110) && ($item->tam <= 130)) $rep_g["D"] += $item->total;*/
+        else if($item->tam > 100) $rep_g["B"] += $item->total;
     }
     else if($item->variedad==3){
         if(($item->fecha > "2024-01-01") && ($item->fecha <= "2024-10-13")) $rango_molino["R1"] += $item->total;
@@ -214,11 +214,8 @@ else{
         <h4><b>Tipo Gordal</b></h4>
         <tr>
             <th>0</th>
-            <th>< 60</th>
-            <th>60 - 90</th>
-            <th>91 - 110</th>
-            <th>111 - 130</th>
-            <th>131 - N</th>
+            <th>< 100</th>
+            <th>101 - N</th>
         </tr>
         </thead>
         <tbody>
